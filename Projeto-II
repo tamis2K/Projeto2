@@ -44,7 +44,7 @@ void setup() {
   server.begin();
 
   server.on("/", [](){
-
+     //Pagina HTML
      page = "<!DOCTYPE html> \
              <html> \
              <head> <meta http-equiv='refresh' content='0' </head> \
@@ -61,7 +61,7 @@ void setup() {
 void loop(){
  
   
-          
+            //Backend   Sensor de Som
             int output = digitalRead(sensor);
             if (output == HIGH){
               if(millis() - evento > 25){
@@ -74,7 +74,7 @@ void loop(){
                }
              evento = millis();
              }
-             server.handleClient();
+             server.handleClient();//Atualização
 
 
 }
